@@ -1,13 +1,10 @@
 <?php
-// Connect to your database (replace the connection details)
 require '../connect.php';
 header('Content-Type: application/json');
 
-// Handle user actions (add, update, delete)
 $data = json_decode(file_get_contents("php://input"), true);
 $action = $data['action'] ?? '';
 
-// Handling GET request to load users
 if ($_SERVER["REQUEST_METHOD"] === "GET" || $action === "get") {
     $sql = "SELECT user_id AS id_user, user_name AS username, phone, address FROM users";
     $result = mysqli_query($conn, $sql);
@@ -23,7 +20,6 @@ if ($_SERVER["REQUEST_METHOD"] === "GET" || $action === "get") {
     echo json_encode($users);
     exit();
 }
-// Handle adding a user
 elseif ($action === "add") {
     $username = trim($data['username'] ?? '');
     $phone = trim($data['phone'] ?? '');
@@ -49,7 +45,6 @@ elseif ($action === "add") {
     mysqli_stmt_close($stmt);
     exit();
 }
-// Handle updating a user
 elseif ($action === "update") {
     $id_user = $data['id_user'] ?? 0;
     $phone = $data['phone'] ?? '';
@@ -68,7 +63,6 @@ elseif ($action === "update") {
     mysqli_stmt_close($stmt);
     exit();
 }
-// Handle deleting a user
 elseif ($action === "delete") {
     $id_user = $data['id_user'] ?? 0;
     if ($id_user == 0) {
@@ -100,7 +94,6 @@ mysqli_close($conn);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Management</title>
     <style>
-        /* Include your CSS styling here */
         body {
             font-family: Arial, sans-serif;
             background-color: #121212;
