@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e2e;
+    color: #fff;
+    text-align: center;
+    padding: 50px;
+}
+
+.container {
+    background: #2a2a3a;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    width: 40%;
+    margin: auto;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.button.logout {
+    display: inline-block;
+    background-color: rgb(245, 59, 59); 
+    color: white; 
+    padding: 10px 0px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.management-product {
+    background-color: #ff9800;
+    color: #fff;
+}
+
+.management-user {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.button:hover {
+    opacity: 0.8;
+}
